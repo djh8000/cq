@@ -74,6 +74,15 @@ img {
     /* ie8 */
     -ms-interpolation-mode: bicubic;
 }
+.b-radius{
+  border-radius: 10px;
+}
+.top-1{
+  margin-top: 10px;
+}
+.top-2{
+  margin-top: 25px;
+}
 .main{
   width: 750px;
   margin: 0 auto;
@@ -141,6 +150,18 @@ img {
   color: #fff;
   font-weight: bold;
   background-color: #100e17;
+}
+.main h2 i{
+  display: inline-block;
+  margin-right: 10px;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 26px;
+  line-height: 40px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  background-color: #fff;
 }
 .banner5 p{
   margin: 10px 0;
