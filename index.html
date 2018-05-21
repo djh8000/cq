@@ -88,20 +88,26 @@
       </div>
     </div>
     <div id="xf">
-      长按复制→&nbsp;&nbsp;<span id="mywx" onclick="copywx(this)">cqsj555</span>&nbsp;&nbsp;←我微信号
+      <p>点击复制微信号按钮,然后打开微信,添加微信了解详情！</p>
+      <div class="main">
+        <span id="mywx" onClick="copywx()">cqsj555</span>
+        <a href="weixin://">打开微信</a>        
+      </div>
     </div>
   </div>
   <footer class="icp">©2018 djh-blog 豫ICP备18014221号</footer>
 </body>
 <script>
-  function copywx(obj) {
-    var rng = document.body.createTextRange();
-    rng.moveToElementText(obj);
-    rng.scrollIntoView();
-    rng.select();
-    rng.execCommand("Copy");
-    rng.collapse(false);
-    alert("复制成功!去微信添加！");
+  function copywx() {
+    var Url2=document.getElementById("mywx").innerText;
+    var oInput = document.createElement('input');
+    oInput.value = Url2;
+    document.body.appendChild(oInput);
+    oInput.select(); // 选择对象
+    document.execCommand("Copy"); // 执行浏览器复制命令
+    oInput.className = 'oInput';
+    oInput.style.display='none';
+    alert("复制成功!打开微信去添加！");
   }
 </script>
 </html>
