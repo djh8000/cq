@@ -36,6 +36,9 @@
     </div>
 
     <script>
+        $('body').on('touchmove', function (event) {
+            event.preventDefault();
+        })
         /* 加入图片，运行代码 */
         $(function(){
             $("#sel_img").change(function(){
