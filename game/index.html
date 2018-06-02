@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./game.js"></script>
+    <script src="./game.js?v=1.1"></script>
 </head>
 <body>
     <div id="mainBody">
@@ -36,15 +36,12 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', ready, false);
         document.addEventListener('touchmove', function (ev){
+            console.log(111)
             ev.preventDefault();
+            return false
+            console.log(222)
         }, false);
-        function ready(){
-            document.querySelector('.body').addEventListener('touchmove', function (ev){
-                ev.stopPropagation();
-            }, false);
-        }
         /* 加入图片，运行代码 */
         $(function(){
             $("#sel_img").change(function(){

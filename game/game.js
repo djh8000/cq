@@ -161,6 +161,7 @@ puzzleGame.prototype = {
 							'left':(e2.targetTouches[0].pageX - cell_mouse_x - self.imgArea.offset().left) + 'px',
 							'top':(e2.targetTouches[0].pageY - cell_mouse_y - self.imgArea.offset().top) + 'px'
 						});
+						e2.preventDefault();
 					}).unbind('touchend').bind('touchend',function(e3){
 						//被交换的碎片下标
 						var cellIndex_2 = self.cellChangeIndex((e3.changedTouches[0].pageX-self.imgArea.offset().left),(e3.changedTouches[0].pageY-self.imgArea.offset().top),cellIndex_1);
@@ -174,7 +175,9 @@ puzzleGame.prototype = {
 
 						//移除绑定
 						$(document).unbind('touchmove').unbind('touchend');
+						e3.preventDefault();
 					});
+					e.preventDefault();
 				})
 			}else if(self.hasStart == 1){
 				if(!confirm('已经在游戏中，确定要回复原图？')){
