@@ -97,11 +97,7 @@ puzzleGame.prototype = {
 	levelSelect:function(){
 		var len = this.levelArr.length;
 		var self = this;
-		this.btnLevel.unbind('mousedown').bind('mousedown',function(){
-			$(this).addClass('mouseOn');
-		}).unbind('mouseup').bind('mouseup',function(){
-			$(this).removeClass('mouseOn');
-		}).unbind('click').bind('click',function(){
+		this.btnLevel.unbind('click').bind('click',function(){
 			//判断是否在游戏中
 			if(self.hasStart){
 				if(!confirm('您已经在游戏中，确定要改变游戏难度么？')){
@@ -131,11 +127,7 @@ puzzleGame.prototype = {
 	 */
 	gameState:function(){
 		var self = this;
-		this.btnStart.unbind('touchstart').bind('touchstart',function(){
-			$(this).addClass('mouseOn');
-		}).unbind('touchend').bind('touchend',function(){
-			$(this).removeClass('mouseOn');
-		}).unbind('click').bind('click',function(){
+		this.btnStart.unbind('click').bind('click',function(){
 			if(self.hasStart == 0){//不在游戏中
 				//开始游戏后部分值、样式设置
 				$(this).text('复原');
@@ -148,7 +140,6 @@ puzzleGame.prototype = {
 				//图片事件
 				self.imgCells.unbind('touchstart').bind('touchstart',function(e){
 					/*此处是图片移动*/
-					$(this).css('cursor','move');
 
 					//所选图片碎片的下标以及鼠标相对该碎片的位置
 					var cellIndex_1 = $(this).index();
@@ -172,10 +163,9 @@ puzzleGame.prototype = {
 						}else{
 							self.cellExchange(cellIndex_1,cellIndex_2);
 						}
-
+						e3.preventDefault();
 						//移除绑定
 						$(document).unbind('touchmove').unbind('touchend');
-						e3.preventDefault();
 					});
 					e.preventDefault();
 				})
@@ -191,7 +181,7 @@ puzzleGame.prototype = {
 				self.cellOrder(self.imgOrigArr);
 
 				//取消事件绑定
-				self.imgCells.css('cursor','default').unbind('touchstart').unbind('touchmove').unbind('touchend');				
+				self.imgCells.unbind('touchstart').unbind('touchmove').unbind('touchend');				
 			}
 		});		
 	},
@@ -331,10 +321,11 @@ puzzleGame.prototype = {
 		//取消样式和事件绑定
 		for(var i=0,len=this.imgOrigArr.length;i<len;i++){
 			if(this.imgCells.eq(i).has('mouseOn')){
+				console.log(this.imgCells.eq(i))
 				this.imgCells.eq(i).removeClass('mouseOn');
 			}
 		}
-		this.imgCells.unbind('mousedown').unbind('mouseover').unbind('mouseout');
+		this.imgCells.unbind('touchstart').unbind('touchmove').unbind('touchend');
 		this.btnStart.text('开始');
 		this.hasStart = 0;
 		alert('恭喜您，成功完成本次游戏！');
