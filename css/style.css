@@ -221,6 +221,10 @@ img {
   border-left: 1px solid #fff;
   color: #fff;
 }
+.commpany{
+  padding: 0 30px;
+  text-indent: 60px;
+}
 .icp{
   text-align: center;
   margin: 20px 0 140px;
