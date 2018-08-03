@@ -30,6 +30,7 @@
         <p>砗磲是软体动物门双壳纲的海洋动物。壳质厚重，壳缘如齿，两壳大小相当，内壳洁白光润，白皙如玉。外韧带，通常有一个大的足丝孔。铰合部有一个主齿和 1～2 个后侧齿。外套痕完整，前闭壳肌消失，后闭壳肌近中央。<span class="hide">在佛教界中，砗磲深受许多师父及信徒们的喜爱。颜色漂亮的砗磲，除了可做装饰外，配戴在身上也可避邪保平安。</span></p>
         <p>南海砗磲批发有几十位技艺精湛的雕刻师傅，为迎合更多藏友的个性定制需求，更为了能够让更多的大师级砗磲雕刻艺术家为藏友献上传世作品，喜欢砗磲的朋友可以加<span class="hide">微信cqsj555</span>朋友圈每天更新，捡漏，买一件也是批发价格重点是：保证天然！</p>
       </div>
+      <a href="javascript:;" class="wxBtn" onclick="show()">点击添加微信>></a>
       <img class="b-radius" src="img/banner2.jpg" alt="砗磲摆件">
       <div class="banner3 hide">
         <img src="img/banner3.png" alt="砗磲摆件,凤凰">
@@ -43,7 +44,7 @@
         <img src="img/banner4-1.jpg" alt="砗磲摆件,龙">
         <img src="img/banner4-2.jpg" alt="砗磲摆件,珊瑚">
       </div>
-
+      <a href="javascript:;" class="wxBtn" onclick="show()">点击添加微信>></a>
       <h2><i>天然砗磲原贝摆件</i></h2>
       <img class="b-radius" src="img/newb2.jpg" alt="天然砗磲原贝摆件">
 
@@ -53,6 +54,9 @@
       <h2 class="top-2"><i>红珊瑚</i></h2>
       <img class="b-radius" src="img/newb1.jpg" alt="红珊瑚">
       <p>属有机宝石，色泽喜人，质地莹润，与珍珠、琥珀并列为三大有机宝石<span class="hide">，在东方佛典中亦被列为七宝之一，自古即被视为富贵祥瑞之物</span>。</p>
+
+      <a href="javascript:;" class="wxBtn" onclick="show()">点击添加微信>></a>
+
       <h1>简介&nbsp;&nbsp;&nbsp;&nbsp;Introduction to the</h1>
       <div class="banner5">
         <h2><span>砗磲简介</span></h2>
@@ -77,6 +81,7 @@
         <img src="img/b7-3.png" alt="砗磲珠子,黑">
         <img src="img/b7-4.png" alt="砗磲珠子,白">
       </div>
+      <a href="javascript:;" class="wxBtn" onclick="show()">点击添加微信>></a>
       <div class="banner8">
         <h1 class="hide">玳瑁神奇的药用价值</h1>
         <p class="hide">自古以来，民间广泛流传，玳瑁制品具有驱邪、祛病之功效。当人体有恙时，其饰品颜色的深浅将随身体的变化而变化。现代医学临床验证，玳瑁工艺制品能降血压蔬经脉、镇惊厥、平心气之功效，对协调和平衡人体内循环系统具有显著的疗效。因此，玳瑁工艺品日益走俏，价格一路猛涨。</p>
@@ -87,28 +92,39 @@
         <img src="img/adres.png" alt="砗磲世家,联系方式" class="hide">
       </div>
     </div>
-    <div id="xf" class="hide">
+    <!-- <div id="xf" class="hide">
       <p>长按复制微信号,然后打开微信,添加微信了解详情！</p>
       <div class="main">
         <span id="mywx">cqsj555</span>
         <a href="weixin://">打开微信</a>        
       </div>
+    </div> -->
+    <div id="xf" class="hide wx">
+      <div class="main">
+        <span id="mywx">cqsj555</span>
+        <a href="javascript:;" onclick="show()">点击添加微信</a>        
+      </div>
     </div>
   </div>
   <p class="commpany">公司坐落于海南省海口市美兰区，从事工艺品行业数十年，从最初的小作坊到现在的行业佼佼者。一直致力行业发展与推广，让更多人看到它的美，欢迎新老客户来厂考察！</p>
   <footer class="icp">©版权所有 海口美兰大棠工艺品工作室 豫ICP备18014221号</footer>
+  <div class="layer-wrap" id="layerWrap">
+    <div class="layer-main">
+      <img class="close" src="img/close.png" onclick="hide()">
+      <img class="myew" src="img/wx.png" alt="微信号">
+      <p class="text">(长按扫描添加二维码，了解更多详情)</p>
+    </div>
+  </div>
 </body>
 <script>
-  function copywx() {
-    var Url2=document.getElementById("mywx").innerText;
-    var oInput = document.createElement('input');
-    oInput.value = Url2;
-    document.body.appendChild(oInput);
-    oInput.select(); // 选择对象
-    document.execCommand("Copy"); // 执行浏览器复制命令
-    oInput.className = 'oInput';
-    oInput.style.display='none';
-    alert("复制成功!打开微信去添加！");
-  }
+  // window.onload = function () {
+    var layer = document.getElementById('layerWrap')
+    function show() {
+      layer.style.display = "block"
+    }
+    function hide() {
+      layer.style.display = "none"
+    }
+  // }
 </script>
 </html>
