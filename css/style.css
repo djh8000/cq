@@ -128,10 +128,14 @@ img {
 .banner4{
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .banner4 img{
   margin: 0 10px;
+}
+.main .add-1{
+  display: block;
+  margin-bottom: 30px;
 }
 .main h2{
   height: 40px;
